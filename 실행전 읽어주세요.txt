@@ -1,0 +1,4 @@
+====FRBS_Sever 셋팅====
+src/config/MySqLInfo에서 각자 DB셋팅에 맞게 수정해주세요!
+
+
