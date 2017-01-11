@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="basic.exam.nfcscanner">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/nfc"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SetDoorScannerActivity"
+            android:label="출입문 스캐너 설정" />
+        <activity android:name=".SetSeatScannerActivity"
+            android:label="좌석 스캐너 설정" />
+        <activity android:name=".DoorScannerActivity"
+            android:label="출입문 스캐너" />
+        <activity android:name=".SeatScannerActivity"
+        android:label="좌석 스캐너" />
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.NFC" />
+</manifest>

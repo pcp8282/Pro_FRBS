@@ -15,44 +15,52 @@
 		Class.forName(MySQLInfo.DRIVER_NAME); // 데이터베이스와 연동하기 위해DriverManager 에 등록한다.
 		// DriverManager 객체로부터 Connection 	객체를 얻어온다.		
 		conn = DriverManager.getConnection(MySQLInfo.URL, MySQLInfo.USER, MySQLInfo.PASSWORD); 
-
+	
 		/*
-		request.getParameter("id")
-		request.getParameter("train_no")
-		
-		*/
-		
-		
+		// 테스트용 실제할때 request.getParameter(""); 변경해서 사용!
 		String customer_id = "pcp8282";
 		int trainId = 1;
 		int trainNo = 1;
-		String seatNo = "A4";
+		String seatNo = "A4";		
+		*/
+		String customer_id = request.getParameter("id");
+		int trainId = Integer.parseInt(request.getParameter("train_id"));
+		int trainNo  = Integer.parseInt(request.getParameter("train_no"));
+		String seatNo = request.getParameter("seat_no"); 
+		///////////////////////
+		System.out.println(seatNo);
 		JSONObject jObject1 = new JSONObject();
 		
 		if (conn != null) {
-			String reserve= "Insert into Reservation(Customer_Id,Train_Id,Train_No,Seat_No) values(?,?,?,?)";
-			pstmt=conn.prepareStatement(reserve);
-			pstmt.setString(1,customer_id);
-			pstmt.setInt(2,trainId);
-			pstmt.setInt(3,trainNo);
-			pstmt.setString(4,seatNo);
-			int result = pstmt.executeUpdate(); // 예매쿼리수행
 			
-			if(result==1){
-				// 예매 성공했음으로 seating_status테이블 좌석체크 컬럼 Y로 바꿔줌
-				String updateSeatStaus = "Update seating_status set Seating_check='Y'" 
-									+" where Train_id=? and Train_no=? and Seat_No=?";
-				pstmt2=conn.prepareStatement(updateSeatStaus);
-				pstmt2.setInt(1,trainId);
-				pstmt2.setInt(2,trainNo);
-				pstmt2.setString(3,seatNo);
-				pstmt2.executeUpdate();
-				jObject1.put("result", "reserve_ok");
+			//예약 유무 
+			String select = "select * from reservation where Train_Id=? and Train_No=? and Seat_No=?";
+			pstmt=conn.prepareStatement(select);
+			pstmt.setInt(1,trainId);
+			pstmt.setInt(2,trainNo);
+			pstmt.setString(3,seatNo);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()){// 예약된 좌석
+				jObject1.put("result", "reserve_exist");
+			}else{
+				String reserve= "Insert into Reservation(Customer_Id,Train_Id,Train_No,Seat_No) values(?,?,?,?)";
+				pstmt2=conn.prepareStatement(reserve);
+				pstmt2.setString(1,customer_id);
+				pstmt2.setInt(2,trainId);
+				pstmt2.setInt(3,trainNo);
+				pstmt2.setString(4,seatNo);
+				int result = pstmt2.executeUpdate(); // 예매쿼리수행
+				
+				if(result==1){
+					jObject1.put("result", "reserve_ok");
+				}
+				else
+					jObject1.put("result", "reserve_fail");
 			}
-			else
-				jObject1.put("result", "reserve_fail");
 			
-		}else {//DB연결 실패
+		}
+		else {//DB연결 실패
 			jObject1.put("result", "connect_fail");
 		} 
 

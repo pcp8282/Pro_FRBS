@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#eeeeee"
+    android:padding="8dp" >
+
+
+
+    <TextView
+        android:id="@+id/departureInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="1dip"
+
+        android:textSize="15dip" />
+
+    <TextView
+        android:id="@+id/arrivalInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/departureInfo"
+        android:layout_marginTop="5dp"
+
+        android:textColor="#666666"
+        android:textSize="15dip" />
+    <TextView
+        android:id="@+id/trainId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/departureInfo"
+        android:layout_marginTop="5dp"
+
+        android:textColor="#666666"
+        android:textSize="13dip"
+        />
+
+
+</RelativeLayout>

@@ -1,4 +1,19 @@
+FRBS_Admin  <-- FRBS 관리자 어플
+
+Train-Ticket-Booking-master <-- FRBS 사용자 어플
+
+NfcScanner <-- NFC 스캐너 어플(출입문, 좌석 기능)
+
+FRBS_Server <-- 서버(어플간 http통신, 아두이노 소켓통신)
+
+
+어플 시작화면 서버설정 클릭해서 환경에 맞게 ip,포트 설정해줏요
+ex) 172.30.1.14:8080
+
 ====FRBS_Sever 셋팅====
 src/config/MySqLInfo에서 각자 DB셋팅에 맞게 수정해주세요!
 
 
+====어플 셋팅====
+ServerInfo 인터페이스 SERVER_URL PC ip주소, 서버 포트 
+개인 환경에 맞게 수정!

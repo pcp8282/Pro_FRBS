@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">FRBS</string>
+    <string name="title_activity_login_page">Sign in</string>
+    <string name="SpinnerHeader">Lines</string>
+
+    <array name="options">
+        <item>--선택--</item>
+        <item>세부사항</item>
+        <item>표 예매</item>
+        <item>로그아웃</item>
+    </array>
+
+    <!--/////////////////////////////////-->
+    <string name="selectLine">--노선 선택--</string>
+
+
+    <string name="DepartStation">출발역</string>
+
+    <array name="Stations">
+        <item>서울</item>
+        <item>부산</item>
+        <item>수원</item>
+    </array>
+    <string name="ArrivalStation">도착역</string>
+    <!--/////////////////////////////-->
+
+    <array name="lineType">
+        <item>--선택--</item>
+        <item>경부선</item>
+        <item>호남선</item>
+        <item>대구선</item>
+        <item>충북선</item>
+        <item>경의선</item>
+        <item>중앙선</item>
+
+    </array>
+
+    <!--///////////////////////////////////-->
+    <string name="hint_email">Email</string>
+    <string name="hint_password">비밀번호</string>
+    <string name="hint_name">Fullname</string>
+    <string name="btn_login">로그인</string>
+    <string name="btn_register">회원가입</string>
+    <string name="btn_link_to_register">아직 회원이 아니세요? 지금 가입하세요!</string>
+    <string name="btn_link_to_login">이미 등록되었습니다. 로그인하세요!</string>
+    <string name="welcome">환영합니다!</string>
+    <string name="btn_logout">로그아웃</string>
+    <string name="name">Fullname</string>
+    <string name="title_activity_menu_page">MenuPage</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!--//////////////////////////////////////-->
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/scheduleInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="1dip"
+
+        android:textSize="15dip" />
+
+    <TextView
+        android:id="@+id/reserveInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="5dp"
+
+        android:textColor="#666666"
+        android:textSize="15dip" />
+
+    <TextView
+        android:id="@+id/trainId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="5dp"
+
+        android:textColor="#666666"
+        android:textSize="13dip"
+        />
+
+</LinearLayout>
